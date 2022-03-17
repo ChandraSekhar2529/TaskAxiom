@@ -31,7 +31,7 @@ phases:
        - git clone https://github.com/chandraSekhar2529/TaskAxiom.git
        - cd TestAxiom
        - echo "export PUBLIC_KEY = aaeffxyhvjbbkjkjnnn" > .env
-       - INSTANCE_ID=$(aws ec2 run-instances --image-id ami-04893cdb768d0f9ee --count 1 --instance-type t2.micro --key-name MyKeyPair   --security-group-idssg-05cb06015e7c77fb2 --user-data file://Ec2Data.txt --associate-public-ip-address  --query Instances[*].InstanceId --output text)
+       - INSTANCE_ID=$(aws ec2 run-instances --image-id ami-04893cdb768d0f9ee --count 1 --instance-type t2.micro --key-name Testc   --security-group-idssg-05cb06015e7c77fb2 --user-data file://Ec2Data.txt --associate-public-ip-address  --query Instances[*].InstanceId --output text)
        - echo the instance id is $INSTANCE_ID
        - PUBLIC_IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query Reservations[*].Instances[*].PublicIpAddress --output text)
        - echo public ip address is $PUBLIC_IP
