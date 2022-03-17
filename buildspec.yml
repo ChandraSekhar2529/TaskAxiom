@@ -27,7 +27,7 @@ phases:
 #     on-failure: ABORT | CONTINUE
      commands:
        - aws ec2 create-key-pair --key-name TestC --query 'KeyMaterial' --output text > TestC.pem
-       - chmod 400 MyKeyPair.pem
+       - chmod 400 TestC.pem
        - git clone https://github.com/chandraSekhar2529/TaskAxiom.git
        - cd TestAxiom
        - echo "export PUBLIC_KEY = aaeffxyhvjbbkjkjnnn" > .env
