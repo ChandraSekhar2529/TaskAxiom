@@ -3,8 +3,8 @@ version: 0.2
 run-as: root
 env:
     parameter-store:
-        AWS_ACCESS_KEY_ID_PARAM: "AKIAXJVFN4PS5SJERG4U"
-        AWS_SECRET_ACCESS_KEY_PARAM: "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"
+        AWS_ACCESS_KEY_ID_PARAM: "AKIAXJVFN4PSXMNWA4ZI"
+        AWS_SECRET_ACCESS_KEY_PARAM: "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"
 
 phases:
   install:
