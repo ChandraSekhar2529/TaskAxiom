@@ -26,7 +26,7 @@ phases:
      run-as: root
 #     on-failure: ABORT | CONTINUE
      commands:
-       - aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+       - aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > TestC.pem
        - chmod 400 MyKeyPair.pem
        - git clone https://github.com/chandraSekhar2529/TaskAxiom.git
        - cd TestAxiom
