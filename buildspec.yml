@@ -1,10 +1,7 @@
 version: 0.2
 
 run-as: root
-# env:
-#     parameter-store:
-#         AWS_ACCESS_KEY_ID_PARAM: "AKIAXJVFN4PSXMNWA4ZI"
-#         AWS_SECRET_ACCESS_KEY_PARAM: "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"
+
 
 phases:
   install:
@@ -32,15 +29,15 @@ phases:
        - aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
        - chmod 400 MyKeyPair.pem
        - git clone https://github.com/chandraSekhar2529/TaskAxiom.git
-       - cd simple-website
+       - cd TestAxiom
        - echo "export PUBLIC_KEY = aaeffxyhvjbbkjkjnnn" > .env
-       - INSTANCE_ID=$(aws ec2 run-instances --image-id ami-04893cdb768d0f9ee --count 1 --instance-type t2.micro --key-name MyKeyPair --subnet-id subnet-0ef9c7d5a86c49ffc  --security-group-ids sg-00db824f1b86fcf7f --user-data file://user-data.txt --associate-public-ip-address  --query Instances[*].InstanceId --output text)
+       - INSTANCE_ID=$(aws ec2 run-instances --image-id ami-04893cdb768d0f9ee --count 1 --instance-type t2.micro --key-name MyKeyPair   --security-group-idssg-05cb06015e7c77fb2 --user-data file://Ec2Data.txt --associate-public-ip-address  --query Instances[*].InstanceId --output text)
        - echo the instance id is $INSTANCE_ID
        - PUBLIC_IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query Reservations[*].Instances[*].PublicIpAddress --output text)
        - echo public ip address is $PUBLIC_IP
        - cd ..
        - pwd 
-       - scp -i MyKeyPair.pem ~/simple-website ec2-user@$PUBLIC_IP:~/var/www/html
+       - scp -i MyKeyPair.pem ~/TestAxiom ec2-user@$PUBLIC_IP:~/var/www/html
 artifacts:
   files:
     - '**/*'
