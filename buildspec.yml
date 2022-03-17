@@ -3,8 +3,8 @@ version: 0.2
 run-as: root
 env:
     parameter-store:
-        AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/AWS_ACCESS_KEY_ID
-        AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/AWS_SECRET_ACCESS_KEY
+        AWS_ACCESS_KEY_ID_PARAM: "AKIAXJVFN4PS5SJERG4U"
+        AWS_SECRET_ACCESS_KEY_PARAM: "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"
 
 phases:
   install:
