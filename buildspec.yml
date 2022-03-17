@@ -37,7 +37,7 @@ phases:
        - echo public ip address is $PUBLIC_IP
        - cd ..
        - pwd 
-       - scp -i MyKeyPair.pem ~/TestAxiom ec2-user@$PUBLIC_IP:~/var/www/html
+       - scp -i TestC.pem ~/TestAxiom ec2-user@$PUBLIC_IP:~/var/www/html
 artifacts:
   files:
     - '**/*'
