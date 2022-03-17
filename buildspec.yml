@@ -1,10 +1,10 @@
 version: 0.2
 
 run-as: root
-env:
-    parameter-store:
-        AWS_ACCESS_KEY_ID_PARAM: "AKIAXJVFN4PSXMNWA4ZI"
-        AWS_SECRET_ACCESS_KEY_PARAM: "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"
+# env:
+#     parameter-store:
+#         AWS_ACCESS_KEY_ID_PARAM: "AKIAXJVFN4PSXMNWA4ZI"
+#         AWS_SECRET_ACCESS_KEY_PARAM: "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"
 
 phases:
   install:
@@ -18,8 +18,8 @@ phases:
       - echo installing.... 
       - pip install --upgrade pip
       - pip install awscli
-      - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID_PARAM
-      - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY_PARAM
+      - aws configure set aws_access_key_id "AKIAXJVFN4PSXMNWA4ZI"
+      - aws configure set aws_secret_access_key "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"
       - git --version    
        
      finally:
