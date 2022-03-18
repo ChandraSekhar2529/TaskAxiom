@@ -1,10 +1,8 @@
-#!/bin/bash
 yum update -y
-sudo yum install -y httpd
+sudo yum install -y httpd.x86_64
 sudo yum install -y  git
 git --version
 systemctl start httpd.service
 systemctl enable httpd.service
-pwd
-cd /var/www/html
-sudo mkdir chandra
+sudo chmod 777 /var/www/html
+sudo chmod 777 /var
