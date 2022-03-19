@@ -1,5 +1,5 @@
 yum update -y
-sudo yum install -y httpd.x86_64
+sudo yum install -y httpd
 sudo yum install -y  git
 git --version
 systemctl start httpd.service
